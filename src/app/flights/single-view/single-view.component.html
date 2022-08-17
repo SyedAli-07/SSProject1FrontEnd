@@ -1,9 +1,10 @@
 <div class="container">
-    <h1 class="text-center">Flights List</h1>
+    <h1 class="text-center">Flight Details</h1>
     <div class="text-center">
-        <a href="#" routerLink="/flights/create" class="btn btn-success">+ Create A Flight</a>
+        <a href="#" routerLink="/flight/index" class="btn btn-primary">Back To List Of All Flights</a>
     </div>
-    
+    <!-- <a href="#" routerLink="/flight/index" class="btn btn-primary text-center">Back</a> -->
+
     <table class="table table-boardered table-striped">
         <thead>
             <tr>
@@ -17,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let flight of flights">
+            <tr>
                 <td>{{flight.id}}</td>
                 <td>{{flight.flightNumber}}</td>
                 <td>{{flight.departureDateTime}}</td>
@@ -26,16 +27,7 @@
                 <td>{{flight.arrivalAirport}}</td>
                 <td>{{flight.maxCapacity}}</td>
                 <td>
-                    <a href="#" [routerLink]="['/flights/', flight.id]" class="btn btn-info">Details</a>
-                </td>
-                <td>
-                    <a href="#" [routerLink]="['/flights/edit/', flight.id]" class="btn btn-primary">Edit</a>
-                </td>
-                <td>
-                    <button type="button" (click)="deleteFlight(flight.id)" class="btn btn-danger">Delete</button>
-                </td>
             </tr>
         </tbody>
     </table>
 </div>
-

@@ -21,4 +21,12 @@ export class IndexComponent implements OnInit {
     this.flightsService.getFlights().subscribe(flights => this.flights = flights);
   }
 
+  deleteFlight(id: number) {
+    this.flightsService.deleteFlight(id).subscribe(res => {
+      this.flights = this.flights.filter(item => item.id !== id);
+      console.log("Flight Successfully Deleted!");
+    })
+  }
+
 }
+  

@@ -12,7 +12,7 @@ export class CreateComponent implements OnInit {
   public newFlightForm! : FormGroup;
 
   constructor(
-    private flightsservice: FlightsService,
+    private flightsService: FlightsService,
     private router: Router
   ) { }
 
@@ -30,7 +30,7 @@ export class CreateComponent implements OnInit {
   get f() {return this.newFlightForm.controls;}
 
   submit() {
-    this.flightsservice.createFlight(this.newFlightForm.value).subscribe(() => {
+    this.flightsService.createFlight(this.newFlightForm.value).subscribe(() => {
       console.log(this.newFlightForm.value);
       console.log(this.newFlightForm.valid);
       console.log("Flight Created Successfully!");

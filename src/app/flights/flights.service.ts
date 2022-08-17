@@ -40,9 +40,17 @@ export class FlightsService {
     return this.http.get<Flight>(url, this.httpOptions);
   }
 
-
   createFlight(flight: Flight): Observable<Flight> {
     return this.http.post<Flight>(this.flightsUrl, flight, this.httpOptions);
+  }
+
+  updateFlight(flight:Flight): Observable<Flight> {
+    let url = `${this.flightsUrl}/${flight.id}`;
+    return this.http.put<Flight>(url, flight, this.httpOptions);
+  }
+
+  deleteFlight(id: number): Observable<Flight> {
+    return this.http.delete<Flight>(`${this.flightsUrl}/${id}`, this.httpOptions);
   }
   // createFlight(flight : FlightDTO) : Observable<Flight> {
   //   let flightToAdd: Flight ={

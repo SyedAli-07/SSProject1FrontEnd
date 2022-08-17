@@ -5,12 +5,14 @@ import { FlightsRoutingModule } from './flights-routing.module';
 import { IndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SingleViewComponent } from './single-view/single-view.component';
 
 
 @NgModule({
   declarations: [
     IndexComponent,
-    CreateComponent
+    CreateComponent,
+    SingleViewComponent
   ],
   imports: [
     CommonModule,
