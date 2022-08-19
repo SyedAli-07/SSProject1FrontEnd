@@ -1,9 +1,8 @@
 <div class="container">
     <h1 class="text-center">Flight Details</h1>
     <div class="text-center">
-        <a href="#" routerLink="/flight/index" class="btn btn-primary">Back To List Of All Flights</a>
+        <a href="#" routerLink="/flights/index" class="btn btn-primary">Back To List Of All Flights</a>
     </div>
-    <!-- <a href="#" routerLink="/flight/index" class="btn btn-primary text-center">Back</a> -->
 
     <table class="table table-boardered table-striped">
         <thead>
@@ -15,6 +14,7 @@
                 <th>Arrival Date & Time</th>
                 <th>Arrival Airport</th>
                 <th>Max Capacity</th>
+                <th>Booked Passengers</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +26,7 @@
                 <td>{{flight.arrivalDateTime}}</td>
                 <td>{{flight.arrivalAirport}}</td>
                 <td>{{flight.maxCapacity}}</td>
+                <td>{{flight.bookedPassengers}}</td>
                 <td>
             </tr>
         </tbody>

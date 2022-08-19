@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FlightsRoutingModule } from './flights-routing.module';
-import { IndexComponent } from './index/index.component';
+import { PassengersRoutingModule } from './passengers-routing.module';
+import { PassengerIndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SingleViewComponent } from './single-view/single-view.component';
 import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
   declarations: [
-    IndexComponent,
+    PassengerIndexComponent,
     CreateComponent,
     SingleViewComponent,
     EditComponent
@@ -20,7 +20,7 @@ import { EditComponent } from './edit/edit.component';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    FlightsRoutingModule
+    PassengersRoutingModule
   ]
 })
-export class FlightsModule { }
+export class PassengersModule { }

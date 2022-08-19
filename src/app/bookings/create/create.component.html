@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Create A New Booking</h1>
+    <a href="#" routerLink="/bookings/index" class="btn btn-primary">&lt;&lt; Back</a>
+    <form [formGroup]="newBookingForm" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="flightid">Flight Id</label>
+            <input type="text" class="form-control" id="flightid" formControlName="flightid" />
+            <div *ngIf="f['flightid'].touched && f['flightid'].invalid" class="alert alert-danger">
+                <div *ngIf="f['flightid'].errors && f['flightid'].errors['required']">Flight Id is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="passengerid">Passenger Id</label>
+            <input type="text" class="form-control" id="passengerid" formControlName="passengerid" />
+            <div *ngIf="f['passengerid'].touched && f['passengerid'].invalid" class="alert alert-danger">
+                <div *ngIf="f['passengerid'].errors && f['passengerid'].errors['required']">Passenger Id is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmationnumber">Confirmation Number</label>
+            <input type="text" class="form-control" id="confirmationnumber" formControlName="confirmationnumber" />
+            <div *ngIf="f['confirmationnumber'].touched && f['confirmationnumber'].invalid" class="alert alert-danger">
+                <div *ngIf="f['confirmationnumber'].errors && f['confirmationnumber'].errors['required']">Confirmation Number is required</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!newBookingForm.valid">Submit</button>
+    </form>
+</div>

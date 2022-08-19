@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 class="text-center">Passenger Details</h1>
+    <div class="text-center">
+        <a href="#" routerLink="/passengers/" class="btn btn-primary">Back To List Of All Passengers</a>
+    </div>
+
+    <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Email</th>
+                <th>Booked Flights</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{passenger.id}}</td>
+                <td>{{passenger.name}}</td>
+                <td>{{passenger.age}}</td>
+                <td>{{passenger.occupation}}</td>
+                <td>{{passenger.email}}</td>
+                <td>{{passenger.bookedFlights}}</td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+</div>

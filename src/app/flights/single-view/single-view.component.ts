@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class SingleViewComponent implements OnInit {
 
     id!: number;
-    flight!: Flight
+    flight!: Flight;
 
   constructor(
     private flightsService: FlightsService,

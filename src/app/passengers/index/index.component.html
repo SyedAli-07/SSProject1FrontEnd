@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="text-center">Passengers List</h1>
+    <div class="text-center">
+        <a href="#" routerLink="/passengers/create" class="btn btn-success">+ Create A Passenger</a>
+    </div>
+    
+    <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let passenger of passengers">
+                <td>{{passenger.id}}</td>
+                <td>{{passenger.name}}</td>
+                <td>{{passenger.age}}</td>
+                <td>{{passenger.occupation}}</td>
+                <td>{{passenger.email}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/passengers/view/', passenger.id]" class="btn btn-info">Details</a>
+                </td>
+                <td>
+                    <a href="#" [routerLink]="['/passengers/edit/', passenger.id]" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <button type="button" (click)="deletePassenger(passenger.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

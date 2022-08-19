@@ -7,6 +7,7 @@ export interface Flight {
     arrivalDateTime : string;
     arrivalAirport : string;
     maxCapacity : number;
+    bookedPassengers: any[];
 }
 
 export interface FlightDTO {

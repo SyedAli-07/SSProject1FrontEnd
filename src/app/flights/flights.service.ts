@@ -9,7 +9,7 @@ import { Flight, FlightDTO } from './flight';
   providedIn: 'root'
 })
 export class FlightsService {
-  private flightsUrl = "https://localhost:7273/api/flights";
+  private flightsUrl = "https://localhost:7273/api/Flights";
 
   // tempFlightData: Flight[] = [{"id":1,"flightnumber":"AA275","departuredatetime":"08\/13\/2022","departureairport":"LAX","arrivaldatetime":"08\/13\/2022","arrivalairport":"JFK","maxcapacity":100},{"id":2,"flightnumber":"SW120","departuredatetime":"08\/15\/2022","departureairport":"MDW","arrivaldatetime":"08\/15\/2022","arrivalairport":"ORD","maxcapacity":100}];
 
@@ -44,9 +44,10 @@ export class FlightsService {
     return this.http.post<Flight>(this.flightsUrl, flight, this.httpOptions);
   }
 
-  updateFlight(flight:Flight): Observable<Flight> {
-    let url = `${this.flightsUrl}/${flight.id}`;
-    return this.http.put<Flight>(url, flight, this.httpOptions);
+  updateFlight(id : number, flight: Flight): Observable<Flight> {
+    let url = `${this.flightsUrl}/${id}`;
+    return this.http.put<Flight>(url, JSON.stringify(flight), this.httpOptions);
+    // return this.http.put<Flight>(url, flight, this.httpOptions);
   }
 
   deleteFlight(id: number): Observable<Flight> {
