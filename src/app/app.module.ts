@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FlightsModule } from './flights/flights.module';
 import { PassengersModule } from './passengers/passengers.module';
 import { BookingsModule } from './bookings/bookings.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BookingsModule } from './bookings/bookings.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    HomeModule,
     FlightsModule,
     PassengersModule,
     BookingsModule
