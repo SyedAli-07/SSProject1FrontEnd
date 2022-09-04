@@ -13,6 +13,7 @@ export class SingleViewComponent implements OnInit {
 
   id!: number;
   passenger!: Passenger;
+  flightslist: any
 
   constructor(
     private passengersService: PassengersService,
@@ -22,11 +23,16 @@ export class SingleViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    console.log("this is the passenger id:", this.id)
-    this.passengersService.getPassenger(this.id).subscribe((data:Passenger) =>{
-      this.passenger = data;
-    })
+    this.retrievePassengerDetails();
   }
 
+  retrievePassengerDetails(): void{
+    this.id = this.route.snapshot.params['id'];
+    console.log("this is the passenger id:", this.id)
+    this.passengersService.getPassenger(this.id).subscribe((data: Passenger) =>{
+      this.passenger = data;
+      console.log("bookedFlights list --->", data)
+      this.flightslist = data.bookedFlights
+    })
+  }
 }
